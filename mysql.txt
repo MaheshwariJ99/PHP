@@ -1,0 +1,35 @@
+<!--Student id- 101790658-->
+<!--Name-Juttu Maheshwari-->
+<!--Assignmnet-1-->
+
+mysql query to create customer table:
+
+mysql>s101790658_db>
+		CREATE TABLE customer(
+		Cid int NOT NULL AUTO_INCREMENT,
+		Name varchar(30) NOT NULL,
+		password varchar(30) NOT NULL,
+		email varchar(40) NOT NULL,
+		phoNo int NOT NULL,
+		PRIMARY KEY (Cid)
+		);
+Mysql query to create request Table:
+
+
+mysql>s101790658_db>
+		CREATE TABLE request(
+		RId int NOT NULL AUTO_INCREMENT,
+		RDate date NOT NULL,
+		Itemdescr varchar(90) NOT NULL,
+		weight int NOT NULL,
+		pickupA varchar(80) NOT NULL,
+		suburb varchar(40) NOT NULL,
+		pickupdatetime datetime NOT NULL,
+		reciever varchar(30) NOT NULL,
+		deliveryadd varchar(90) NOT NULL,
+		dsuburb varchar(30) NOT NULL,
+		state varchar(10) NOT NULL,
+		Cid int,
+		PRIMARY KEY (RId),
+		FOREIGN KEY (Cid) REFERENCES customer(Cid)
+		);
